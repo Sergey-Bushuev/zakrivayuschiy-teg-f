@@ -1,1 +1,26 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+    --main-color: #00cc14;
+    --backgroud-color: #000;
+    --button-text-color: #00cc14;
+    --animation-color: #ff0000;
+    --font-weight-title: 785;
+    --font-weight-content: 465;
+    --background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 1) 2px,
+      rgba(0, 0, 0, 1) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 1) 2px,
+      rgba(0, 0, 0, 1) 4px
+    ),
+    linear-gradient(180deg, #007F0C, #004306);
+  }
+  
