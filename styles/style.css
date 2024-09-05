@@ -17,17 +17,12 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  background: radial-gradient(circle, rgba(255,255,255,0.5) 1px, rgba(255,255,255,0) 1px);
-  height: 100vh;
-}
-
-.page {
   margin: 0;
   height: 100vh;
   background-attachment: fixed;
   background-image: var(--background);
-    color:var(--main-color);
-    font-family: 'Inter-Variable', sans-serif;
+  color:var(--main-color);
+  font-family: 'Inter-Variable', sans-serif;
 }
 
 .header {
@@ -86,7 +81,6 @@
   position: absolute;
   top:0;
   margin-left: -20px;
-  animation: menuButton 2s  infinite;
   animation: choosing 1s ease-in-out infinite alternate;
 }
 
@@ -129,18 +123,18 @@
 }
 
 .button__text {
-  font-weight: 400;
+  font-weight: var(----font-weight-content);
   font-size: 14px;
   line-height: 90%;
   position: relative;
   z-index: 20;
   color: var(--main-color);
   font-family: 'PressStart2P', sans-serif;
+  font-variation-settings: "wght" var(--font-weight-title);
 }
 
 .card__like-button {
   height: 35px;
-  display: flex;
   align-items: center;
   width: 130px;
   text-align: center;
@@ -184,9 +178,6 @@
   fill: var(--backgroud-color);
 }
 
-.button:hover svg {
-  color:var(--backgroud-color);
-}
 .button:hover .button__text {
   color:var(--backgroud-color);
 }
@@ -201,6 +192,7 @@
   border-bottom: none;
   padding: 3px 10px;
   font-size:18px;
+  font-variation-settings: "wght" var(--font-weight-title);
 }
 
 .main__list-item__cover {
@@ -210,15 +202,27 @@
 
 .main__list-item-info {
   position: absolute;
-  top:30px;
-  right:27px;
+  top: 30px;
+  right: 27px;
   font-family: 'PressStart2P', sans-serif;
-  font-size:14px;
-  -webkit-text-stroke:1px var(--backgroud-color);
+  font-size: 14px;
+  font-variation-settings: "wght" var(--font-weight-content);
   color: var(--main-color);
   text-transform: uppercase;
   opacity: 0.5;
-  font-weight: 400;
+  font-weight: var(----font-weight-content);
+  text-shadow: 
+    -1px -1px 0 var(--backgroud-color),  
+     1px -1px 0 var(--backgroud-color),
+    -1px  1px 0 var(--backgroud-color),  
+     1px  1px 0 var(--backgroud-color);
+}
+
+@supports (-webkit-text-stroke: 1px var(--backgroud-color)) {
+  .main__list-item-info {
+    -webkit-text-stroke: 1px var(--backgroud-color);
+    text-stroke: 1px var(--backgroud-color);
+  }
 }
 
 .main__list-item-text {
@@ -253,6 +257,7 @@
 
 .main__list-item-text p {
   font-size: 18px;
+  font-variation-settings: "wght" var(--font-weight-content);
 }
 
 .footer {
@@ -280,7 +285,7 @@
 }
 
 .button__svg rect {
-  transition: all 0.3s ease;
+  transition: fill 0.3s ease;
 }
 
 .modal {
@@ -331,4 +336,32 @@
   width: 100%;
   padding: 12.5px 0;
   text-transform: uppercase;
+}
+
+.main__list li:nth-child(2) .image-list {
+  filter: saturate(0.5);
+}
+
+.main__list li:nth-child(3) .image-list {
+  filter: saturate(2);
+}
+
+.main__list li:nth-child(4) .image-list {
+  filter: hue-rotate(45deg);
+}
+
+.main__list li:nth-child(5) .image-list {
+  filter: invert(1);
+}
+
+.main__list li:nth-child(6) .image-list {
+  filter: sepia(1);
+}
+
+.main__list li:nth-child(7) .image-list {
+  filter:blur(10px);
+}
+
+.main__list li:nth-child(8) .image-list {
+  filter: hue-rotate(-245deg) contrast(0.5);
 }
