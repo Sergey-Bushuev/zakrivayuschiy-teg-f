@@ -170,10 +170,6 @@
   transition: color 0.5s ease-in-out;
 }
 
-.button:hover .button__text {
-  color: var(--main-color);
-}
-
 .button:hover .button__svg rect {
   fill: var(--backgroud-color);
 }
