@@ -10,6 +10,7 @@
     --backgroud-color: #fff;
     --button-text-color: #fff;
     --font-weight-title: 700;
+    --animation-color: #000;
     --font-weight-content: 400;
     --background: repeating-linear-gradient(
         90deg,
@@ -25,6 +26,8 @@
       --main-color: #000;
       --backgroud-color: #fff;
       --button-text-color: #fff;
+      --font-weight-content: 400;
+      --animation-color: #000;
       --background: repeating-linear-gradient(
           90deg,
           #d3d3d3 0px 2px,
@@ -44,6 +47,7 @@
     --backgroud-color: #000;
     --font-weight-title: 785;
     --font-weight-content: 465;
+    --animation-color: #ff0000;
     --button-text-color: #00cc14;
     --background: repeating-linear-gradient(90deg, black 0px 2px, rgba(0, 0, 0, 0) 2px 4px),
     repeating-linear-gradient(180deg, black 0px 2px, rgba(0, 0, 0, 0) 2px 4px),
