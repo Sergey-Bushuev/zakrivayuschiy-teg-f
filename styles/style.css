@@ -25,12 +25,16 @@
   font-family: 'Inter-Variable', sans-serif;
 }
 
+.button:hover svg {
+  color: var(--button-text-color);
+}
+
 .header {
   width: 100%;
   max-width: 700px;
-  margin: 100px auto 102px;
+  margin: 100px auto 98px;
   background: var(--backgroud-color);
-  padding: 136px 0 25px;
+  padding: 136px 0 22px;
   font-family: 'PressStart2P', sans-serif;
   border: 2px solid var(--main-color);
 }
@@ -42,9 +46,10 @@
   flex-direction: column;
 }
 
-.header-title {
+.main-title {
   text-transform: uppercase;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
 }
 
 .header-subtitle {
@@ -96,13 +101,13 @@
 }
 
 .main__list {
-  gap: 50px;
+  gap: 52px;
   display: flex;
   flex-direction: column;
 }
 
 .main__list-header {
-  border: 1px solid var(--main-color);
+  border: 2px solid var(--main-color);
   padding: 3px 10px;
   background: var(--backgroud-color);
 }
@@ -113,7 +118,7 @@
 
 .main__list-body-text {
   padding: 25px;
-  border: 1px solid var(--main-color);
+  border: 2px solid var(--main-color);
   background: var(--backgroud-color);
   width: 100%;
   margin-left: -6px;
@@ -135,7 +140,7 @@
   z-index: 20;
   color: var(--main-color);
   font-family: 'PressStart2P', sans-serif;
-  font-variation-settings: "wght"var(--font-weight-title);
+  font-weight: 400;
 }
 
 .card__like-button {
@@ -160,7 +165,6 @@
   position: absolute;
   height: 100%;
   width: 0;
-
   left: 0;
   top: 0;
   transition: width 0.5s ease-in-out;
@@ -193,7 +197,7 @@
   border-bottom: none;
   padding: 3px 10px;
   font-size: 18px;
-  font-variation-settings: "wght"var(--font-weight-title);
+  font-variation-settings: "wght" var(--font-weight-title);
 }
 
 .main__list-item__cover {
@@ -203,12 +207,14 @@
 }
 
 .main__list-item-info {
+  color: var(--text-color);
+  text-stroke: none;
   position: absolute;
-  top: 30px;
-  right: 27px;
+  top: 26px;
+  right: 13px;
   font-family: 'PressStart2P', sans-serif;
   font-size: 14px;
-  font-variation-settings: "wght"var(--font-weight-content);
+  font-variation-settings: "wght" var(--font-weight-content);
   color: var(--main-color);
   text-transform: uppercase;
   opacity: 0.5;
@@ -220,21 +226,22 @@
       1px 1px 0 var(--backgroud-color);
 }
 
-@supports (-webkit-text-stroke: 1px var(--backgroud-color)) {
+@supports (-webkit-text-stroke: 1px var(--background-color)) {
   .main__list-item-info {
-    -webkit-text-stroke: 1px var(--backgroud-color);
+    -webkit-text-stroke: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
   }
 }
 
 .main__list-item-text {
   background: var(--backgroud-color);
-  padding: 25px;
+  padding: 23px 25px;
   border: 2px solid var(--main-color);
   border-top: none;
 }
 
-.main__list-item-text p:nth-child(1) {
-  margin-bottom: 27px;
+.main__text-body {
+  margin-bottom: 22.5px;
 }
 
 .main__list-item__button {
@@ -246,10 +253,14 @@
 }
 
 .card__icon-button {
-  height: 33px;
-  width: 33px;
+  height: 34px;
+  width: 37px;
   border: none;
   background: none;
+}
+
+.card__icon-button:hover svg:not(.is-liked) .body {
+  fill:var(--main-color);
 }
 
 .main__list-item-image {
@@ -258,7 +269,7 @@
 
 .main__list-item-text p {
   font-size: 18px;
-  font-variation-settings: "wght"var(--font-weight-content);
+  font-variation-settings: "wght" var(--font-weight-content);
 }
 
 .modal-open__container {
@@ -270,7 +281,7 @@
 
 .modal-open__button {
   padding: 15px 19px;
-  border: 1px solid var(--main-color);
+  border: 2px solid var(--main-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -291,6 +302,7 @@
 
 .like-icon.is-liked {
   fill: var(--animation-color);
+  color: var(--animation-color)
 }
 
 .modal {
@@ -309,6 +321,13 @@
 }
 
 .modal__overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.modal::backdrop {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
@@ -317,7 +336,6 @@
   align-items: center;
   backdrop-filter: blur(10px);
 }
-
 
 .modal__content {
   padding: 30px 42px;
@@ -353,6 +371,13 @@
   text-transform: uppercase;
 }
 
+.main__list-item__cover {
+  border: 2px solid var(--main-color);
+  width: -webkit-fill-available;
+}
+
+
+
 .main__list .blight .image-list {
   filter: saturate(0.5);
 }
@@ -381,9 +406,27 @@
   filter: hue-rotate(-245deg) contrast(0.5);
 }
 
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px var(--themes-main-color);
+  outline: none;
+}
+
+.modal-open__button svg {
+  position: relative;
+  z-index: 10;
+}
+
+.modal-open__button:hover svg * {
+  color: var(--backgroud-color);
+}
+
 @media(max-width:376px) {
   .main__list-item__button {
-    margin-top: 19px;
+    margin-top: 24px;
   }
 
   .modal-open__button {
@@ -391,6 +434,18 @@
   }
 
   .header {
-    padding: 122px 0 25px
+    padding: 122px 0 23px
   }
+  .header-subtitle {
+    margin-bottom: 20px;
+  }
+  .main__list-item-text p {
+    width: 99%;
+  }
+
+  main__list-item-text p {
+    padding-right: 6px;
+    line-height: 118%;
+  }
+
 }
