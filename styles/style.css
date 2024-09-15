@@ -297,8 +297,9 @@
   outline:none;
 }
 
-.card__icon-button::focus-visible {
-
+.card__icon-button:focus-visible {
+  box-shadow: 2px 2px var(--main-color);
+  outline: none;
 }
 
 .card__icon-button:hover svg:not(.is-liked) .body {
