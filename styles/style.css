@@ -98,9 +98,11 @@
   outline: none;
 }
 
-.theme-menu__button::focus-visible {
+.theme-menu__button:focus-visible {
   box-shadow: 2px 2px var(--main-color);
   outline: none;
+  opacity: 0.5;
+  box-shadow: none;
 }
 
 .main {
@@ -461,7 +463,7 @@
   transition: width 0.5s ease-in-out;
 }
 
-.theme-menu__button:focus-within::after {
+.theme-menu__button:focus-visible::after {
   width: 100%;
 }
 
